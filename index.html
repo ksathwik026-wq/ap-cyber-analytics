@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AP Cyber Crime Analytics Dashboard</title>
     <link rel="stylesheet" href="style.css">
-    <!-- FIX: Restored full, verified Chart.js Production CDN Link -->
+    <!-- Production Chart.js Core Library URL Link -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -27,18 +27,18 @@
             <canvas id="vectorChart"></canvas>
         </section>
 
-        <!-- Extra Feature: Interactive Search Engine Section -->
+        <!-- Interactive Search Engine Section -->
         <section class="card full-width">
             <h3>🔍 Live Cyber Threat Dictionary & Search Filter</h3>
             <p class="instruction">Search by scam keywords (e.g., 'UPI', 'Arrest', 'Call') to read immediate safety instructions.</p>
-            <input type="text" id="searchInput" placeholder="Type scam name here..." onkeyup="filterThreats()">
+            <input type="text" id="searchInput" placeholder="Type scam name here...">
             <div id="threatContainer"></div>
         </section>
 
-        <!-- Extra Feature: Risk Vulnerability Calculator Form -->
+        <!-- Risk Vulnerability Calculator Form -->
         <section class="card full-width">
             <h3>⚡ Personal Digital Risk Vulnerability Calculator</h3>
-            <form id="riskForm" onsubmit="calculateRisk(event)">
+            <form id="riskForm">
                 <div class="form-group">
                     <label>1. Do you use unique passwords for your banking applications?</label>
                     <select id="q1">
@@ -62,9 +62,18 @@
                 </div>
                 <button type="submit">Evaluate Risk Score</button>
             </form>
-            <div id="riskResult" class="result-box hidden"></div>
         </section>
     </main>
+
+    <!-- EXTRA FEATURE: Custom Styled Success Page Alert Pop-Up Modal -->
+    <div id="customModal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div id="modalIcon" class="modal-icon"></div>
+            <h2 id="modalTitle">Evaluation Title</h2>
+            <p id="modalMessage">Evaluation detailed text report goes here.</p>
+            <button onclick="closeModal()" class="close-modal-btn">Acknowledge & Return</button>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>

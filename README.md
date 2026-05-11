@@ -3,7 +3,7 @@
 
 A lightweight, responsive web dashboard built to analyze and visualize regional cyber crime and digital fraud trends in Andhra Pradesh using official secondary datasets.
 
-Live URL: https://[your-github-username].github.io/ap-cyber-analytics/
+Live URL: https://ksathwik026-wq.github.io/ap-cyber-analytics/
 
 ## 📊 Project Overview
 * **Domain:** Cybersecurity & Data Visualization

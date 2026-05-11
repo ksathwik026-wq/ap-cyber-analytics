@@ -11,8 +11,9 @@ new Chart(ctxTrend, {
         datasets: [{
             label: 'NCRB Registered Cases (Andhra Pradesh)',
             data: caseDataAP,
-            borderColor: '#3b82f6',
-            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+            borderColor: '#10b981',           // Change this to any hex color code (e.g., Green)
+            backgroundColor: 'rgba(16, 185, 129, 0.1)', // Matches the line color but sets a 10% opacity fill
+
             fill: true,
             tension: 0.2
         }]
@@ -28,7 +29,13 @@ new Chart(ctxVector, {
         labels: ['Online Fraud (58%)', 'Identity Theft (21%)', 'Digital Arrests (12%)', 'OTP Phishing (9%)'],
         datasets: [{
             data: [58, 21, 12, 9],
-            backgroundColor: ['#ef4444', '#3b82f6', '#f59e0b', '#10b981']
+            backgroundColor: [
+                '#1e3a8a',  // Segment 1: Deep Corporate Blue (Online Fraud - 58%)
+                '#3b82f6',  // Segment 2: Bright Sky Blue (Identity Theft - 21%)
+                '#60a5fa',  // Segment 3: Light Pastel Blue (Digital Arrests - 12%)
+                '#94a3b8'   // Segment 4: Slate Gray (OTP Phishing - 9%)
+            ]
+
         }]
     },
     options: { responsive: true }

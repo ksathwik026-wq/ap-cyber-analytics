@@ -41,6 +41,7 @@ h3 { color: #3b82f6; margin-top: 0; border-bottom: 1px solid #334155; padding-bo
     border-radius: 6px;
     margin-bottom: 15px;
     font-size: 16px;
+    box-sizing: border-box;
 }
 .threat-item {
     background-color: #334155;
@@ -54,7 +55,7 @@ h3 { color: #3b82f6; margin-top: 0; border-bottom: 1px solid #334155; padding-bo
 label { display: block; margin-bottom: 6px; font-weight: bold; }
 select {
     width: 100%; padding: 10px; background-color: #0f172a;
-    color: white; border: 1px solid #475569; border-radius: 6px;
+    color: white; border: 1px solid #475569; border-radius: 6px; box-sizing: border-box;
 }
 button {
     background-color: #2563eb; color: white; border: none;
@@ -62,7 +63,29 @@ button {
     cursor: pointer; width: 100%; font-weight: bold;
 }
 button:hover { background-color: #1d4ed8; }
-.result-box { padding: 15px; border-radius: 6px; margin-top: 15px; text-align: center; font-weight: bold; }
-.high-risk { background-color: #7f1d1d; border: 1px solid #ef4444; }
-.low-risk { background-color: #064e3b; border: 1px solid #10b981; }
-.hidden { display: none; }
+
+/* CUSTOM MODAL POP-UP STYLES */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(15, 23, 42, 0.85);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 9999; opacity: 1; transition: opacity 0.25s ease-in-out;
+}
+.modal-box {
+    background-color: #1e293b;
+    border: 2px solid #334155;
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 480px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+.modal-icon { font-size: 50px; margin-bottom: 15px; }
+.modal-box h2 { margin-top: 0; font-size: 24px; }
+.modal-box p { color: #94a3b8; font-size: 16px; line-height: 1.5; margin-bottom: 25px; }
+.close-modal-btn { background-color: #475569; border: none; padding: 10px 20px; }
+.close-modal-btn:hover { background-color: #64748b; }
+.hidden { display: none !important; }

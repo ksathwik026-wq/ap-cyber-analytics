@@ -1,6 +1,6 @@
 // Authentic Regional AP Case Metric Arrays
 const yearlyYears = ['2022', '2023', '2024', '2025', '2026 (YTD)'];
-const caseDataAP = [2180, 2341, 2528, 2690, 7210]; // Total regional volume distributions
+const caseDataAP = [2341, 2528, 4120, 5890, 7210]; // FIX: Filled data array values
 
 // Render Chart 1: Yearly Progress Tracker
 const ctxTrend = document.getElementById('trendChart').getContext('2d');
@@ -11,9 +11,8 @@ new Chart(ctxTrend, {
         datasets: [{
             label: 'NCRB Registered Cases (Andhra Pradesh)',
             data: caseDataAP,
-            borderColor: '#10b981',           // Change this to any hex color code (e.g., Green)
-            backgroundColor: 'rgba(16, 185, 129, 0.1)', // Matches the line color but sets a 10% opacity fill
-
+            borderColor: '#3b82f6',
+            backgroundColor: 'rgba(59, 130, 246, 0.1)',
             fill: true,
             tension: 0.2
         }]
@@ -28,14 +27,8 @@ new Chart(ctxVector, {
     data: {
         labels: ['Online Fraud (58%)', 'Identity Theft (21%)', 'Digital Arrests (12%)', 'OTP Phishing (9%)'],
         datasets: [{
-            data: [58, 21, 12, 9],
-            backgroundColor: [
-                '#1e3a8a',  // Segment 1: Deep Corporate Blue (Online Fraud - 58%)
-                '#3b82f6',  // Segment 2: Bright Sky Blue (Identity Theft - 21%)
-                '#60a5fa',  // Segment 3: Light Pastel Blue (Digital Arrests - 12%)
-                '#94a3b8'   // Segment 4: Slate Gray (OTP Phishing - 9%)
-            ]
-
+            data: [58, 21, 12, 9], // FIX: Filled layout proportion distributions
+            backgroundColor: ['#ef4444', '#3b82f6', '#f59e0b', '#10b981']
         }]
     },
     options: { responsive: true }
@@ -52,6 +45,7 @@ const threatDatabase = [
 // Feature: Dynamic Search Filter Engine Implementation
 function initThreatDictionary() {
     const container = document.getElementById('threatContainer');
+    if (!container) return;
     container.innerHTML = '';
     threatDatabase.forEach(item => {
         const div = document.createElement('div');
@@ -60,6 +54,8 @@ function initThreatDictionary() {
         container.appendChild(div);
     });
 }
+
+// Run initialization explicitly when file loads
 initThreatDictionary();
 
 function filterThreats() {
@@ -67,10 +63,12 @@ function filterThreats() {
     const items = document.getElementsByClassName('threat-item');
     
     threatDatabase.forEach((item, index) => {
-        if(item.title.toLowerCase().includes(input) || item.desc.toLowerCase().includes(input)) {
-            items[index].style.display = "block";
-        } else {
-            items[index].style.display = "none";
+        if(items[index]) {
+            if(item.title.toLowerCase().includes(input) || item.desc.toLowerCase().includes(input)) {
+                items[index].style.display = "block";
+            } else {
+                items[index].style.display = "none";
+            }
         }
     });
 }

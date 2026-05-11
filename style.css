@@ -1,0 +1,68 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #0f172a;
+    color: #f1f5f9;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background: linear-gradient(135deg, #1e3a8a, #1e40af);
+    text-align: center;
+    padding: 30px 15px;
+    border-bottom: 4px solid #3b82f6;
+}
+header h1 { margin: 0; font-size: 28px; }
+header p { margin: 5px 0 0 0; color: #93c5fd; }
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.visual-card { width: 48%; min-width: 340px; }
+.full-width { width: 100%; }
+h3 { color: #3b82f6; margin-top: 0; border-bottom: 1px solid #334155; padding-bottom: 8px; }
+#searchInput {
+    width: 100%;
+    padding: 12px;
+    background-color: #0f172a;
+    border: 1px solid #475569;
+    color: white;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+.threat-item {
+    background-color: #334155;
+    padding: 15px;
+    border-left: 5px solid #ef4444;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+.threat-item h4 { margin: 0 0 5px 0; color: #f87171; }
+.form-group { margin-bottom: 15px; }
+label { display: block; margin-bottom: 6px; font-weight: bold; }
+select {
+    width: 100%; padding: 10px; background-color: #0f172a;
+    color: white; border: 1px solid #475569; border-radius: 6px;
+}
+button {
+    background-color: #2563eb; color: white; border: none;
+    padding: 12px 20px; font-size: 16px; border-radius: 6px;
+    cursor: pointer; width: 100%; font-weight: bold;
+}
+button:hover { background-color: #1d4ed8; }
+.result-box { padding: 15px; border-radius: 6px; margin-top: 15px; text-align: center; font-weight: bold; }
+.high-risk { background-color: #7f1d1d; border: 1px solid #ef4444; }
+.low-risk { background-color: #064e3b; border: 1px solid #10b981; }
+.hidden { display: none; }

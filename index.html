@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP Cyber Crime Analytics Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js Engine CDN -->
+    <script src="jsdelivr.net"></script>
+</head>
+<body>
+    <header>
+        <h1>Andhra Pradesh Cyber Crime Analytics</h1>
+        <p>APSCHE Community Service Project | B.Tech CSE Data Dashboard</p>
+    </header>
+
+    <main class="dashboard-container">
+        <!-- Visual Component 1 -->
+        <section class="card visual-card">
+            <h3>Yearly Cyber Crime Growth Trend (AP)</h3>
+            <canvas id="trendChart"></canvas>
+        </section>
+
+        <!-- Visual Component 2 -->
+        <section class="card visual-card">
+            <h3>Distribution of Fraud Vectors</h3>
+            <canvas id="vectorChart"></canvas>
+        </section>
+
+        <!-- Extra Feature: Interactive Search Engine Section -->
+        <section class="card full-width">
+            <h3>🔍 Live Cyber Threat Dictionary & Search Filter</h3>
+            <p class="instruction">Search by scam keywords (e.g., 'UPI', 'Arrest', 'Call') to read immediate safety instructions.</p>
+            <input type="text" id="searchInput" placeholder="Type scam name here..." onkeyup="filterThreats()">
+            <div id="threatContainer"></div>
+        </section>
+
+        <!-- Extra Feature: Risk Vulnerability Calculator Form -->
+        <section class="card full-width">
+            <h3>⚡ Personal Digital Risk Vulnerability Calculator</h3>
+            <form id="riskForm" onsubmit="calculateRisk(event)">
+                <div class="form-group">
+                    <label>1. Do you use unique passwords for your banking applications?</label>
+                    <select id="q1">
+                        <option value="0">Yes, unique passwords everywhere</option>
+                        <option value="15">No, I reuse identical passwords</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>2. How do you handle sudden phone calls asking for personal details or panic actions?</label>
+                    <select id="q2">
+                        <option value="0">I disconnect instantly and call official numbers</option>
+                        <option value="20">I listen and follow instructions under stress</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>3. Is Two-Factor Authentication (2FA) active on your primary Email and UPI apps?</label>
+                    <select id="q3">
+                        <option value="0">Yes, active everywhere</option>
+                        <option value="15">No, only passwords protect them</option>
+                    </select>
+                </div>
+                <button type="submit">Evaluate Risk Score</button>
+            </form>
+            <div id="riskResult" class="result-box hidden"></div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
